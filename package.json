@@ -13,10 +13,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "venv": "^1.0.1"
+    "express": "^4.18.2",
+    "venv": "^1.0.1",
+    "ws": "^8.13.0"
   },
   "devDependencies": {
     "@types/node": "^20.3.2",
+    "@types/ws": "^8.5.5",
     "nodemon": "^2.0.22",
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
