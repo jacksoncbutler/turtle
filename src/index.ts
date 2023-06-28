@@ -1,11 +1,13 @@
-import {server} from 'ws';
+import { WebSocketServer } from 'ws';
 
-const wss = new server({port:5757});
+const wss = new WebSocketServer({ port: 8080 });
 
 wss.on('connection', function connection(ws) {
-    ws.on('message', function incoming(message) {
-        console.log('received: %s;', message);
-    });
+  ws.on('error', console.error);
 
-    ws.send('something');
+  ws.on('message', function message(data) {
+    console.log('received: %s', data);
+  });
+
+  ws.send('something');
 });
