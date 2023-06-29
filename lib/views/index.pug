@@ -1,0 +1,9 @@
+extends layout
+
+block layout-content
+    form(action = "/", method = "POST")
+        div
+        label(for = "say") Say:
+        input(name = "function" value = "turtle.turnLeft()" type='eval')
+        br
+        button(type = "submit") Send Instructions
