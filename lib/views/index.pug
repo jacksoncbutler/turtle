@@ -3,7 +3,33 @@ extends layout
 block layout-content
     form(action = "/", method = "POST")
         div
-        label(for = "say") Say:
-        input(name = "function" value = "turtle.turnLeft()" type='eval')
+        input(name = "function" value = "turtle.turnRight()" type='eval')
         br
         button(type = "submit") Send Instructions
+    form(action = "/", method = "POST")
+        div
+        button(type = "submit" name = "function" value = "turtle.turnLeft()" ) Turn Left
+    form(action = "/", method = "POST")
+        div
+        button(type = "submit" name = "function" value = "turtle.turnRight()" ) Turn right
+    form(action = "/", method = "POST")
+        div
+        button(type = "submit" name = "function" value = "turtle.forward()" ) Forward
+    form(action = "/", method = "POST")
+        div
+        button(type = "submit" name = "function" value = "turtle.back()" ) Back 
+    form(action = "/", method = "POST")
+        div
+        button(type = "submit" name = "function" value = "turtle.up()" ) Up
+    form(action = "/", method = "POST")
+        div
+        button(type = "submit" name = "function" value = "turtle.down()" ) Down
+    form(action = "/", method = "POST")
+        div
+        button(type = "submit" name = "function" value = "turtle.dig()" ) Dig
+    form(action = "/", method = "POST")
+        div
+        button(type = "submit" name = "function" value = "turtle.digUp()" ) Dig Up
+    form(action = "/", method = "POST")
+        div
+        button(type = "submit" name = "function" value = "turtle.digDown()" ) Dig Down
