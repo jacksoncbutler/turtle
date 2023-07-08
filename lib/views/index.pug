@@ -1,35 +1,35 @@
 extends layout
 
-block layout-content
-    form(action = "/", method = "POST")
-        div
-        input(name = "function" value = "turtle.turnRight()" type='eval')
-        br
-        button(type = "submit") Send Instructions
-    form(action = "/", method = "POST")
-        div
-        button(type = "submit" name = "function" value = "turtle.turnLeft()" ) Turn Left
-    form(action = "/", method = "POST")
-        div
-        button(type = "submit" name = "function" value = "turtle.turnRight()" ) Turn right
-    form(action = "/", method = "POST")
-        div
-        button(type = "submit" name = "function" value = "turtle.forward()" ) Forward
-    form(action = "/", method = "POST")
-        div
-        button(type = "submit" name = "function" value = "turtle.back()" ) Back 
-    form(action = "/", method = "POST")
-        div
-        button(type = "submit" name = "function" value = "turtle.up()" ) Up
-    form(action = "/", method = "POST")
-        div
-        button(type = "submit" name = "function" value = "turtle.down()" ) Down
-    form(action = "/", method = "POST")
-        div
-        button(type = "submit" name = "function" value = "turtle.dig()" ) Dig
-    form(action = "/", method = "POST")
-        div
-        button(type = "submit" name = "function" value = "turtle.digUp()" ) Dig Up
-    form(action = "/", method = "POST")
-        div
-        button(type = "submit" name = "function" value = "turtle.digDown()" ) Dig Down
+
+block layout-content-actions
+    div
+        form(action = "/", method = "POST")
+            div
+                select(name = "active_turtle")
+                    each turtle in turtles 
+                        option(value=turtle) #{turtle}
+            div
+            input(name = "custom_function" value = "" type='eval')
+            
+            div
+            button(name = "function" value = "turtle.turnLeft()" ) Turn Left
+            div
+            button(name = "function" value = "turtle.turnRight()" ) Turn right
+            div
+            button(name = "function" value = "turtle.forward()" ) Forward
+            div
+            button(name = "function" value = "turtle.back()" ) Back 
+            div
+            button(name = "function" value = "turtle.up()" ) Up
+            div
+            button(name = "function" value = "turtle.down()" ) Down
+            div
+            button(name = "function" value = "turtle.dig()" ) Dig
+            div
+            button(name = "function" value = "turtle.digUp()" ) Dig Up
+            div
+            button(name = "function" value = "turtle.digDown()" ) Dig Down
+
+            br
+            button(type = "submit") Send Instructions
+       
