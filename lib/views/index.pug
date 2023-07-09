@@ -3,33 +3,44 @@ extends layout
 
 block layout-content-actions
     div
-        form(action = "/", method = "POST")
-            div
-                select(name = "active_turtle")
-                    each turtle in turtles 
+    form(action = "/", method = "POST")
+        div
+            select(name = "active_group")
+                each groupKey in groupKeys 
+                    option(value=groupKey) #{groupKey}
+            button(type="submit") Select
+        div 
+            select(name = "active_turtle")
+                each turtles in groups
+                    each turtle in turtles
                         option(value=turtle) #{turtle}
-            div
-            input(name = "custom_function" value = "" type='eval')
-            
-            div
-            button(name = "function" value = "turtle.turnLeft()" ) Turn Left
-            div
-            button(name = "function" value = "turtle.turnRight()" ) Turn right
-            div
-            button(name = "function" value = "turtle.forward()" ) Forward
-            div
-            button(name = "function" value = "turtle.back()" ) Back 
-            div
-            button(name = "function" value = "turtle.up()" ) Up
-            div
-            button(name = "function" value = "turtle.down()" ) Down
-            div
-            button(name = "function" value = "turtle.dig()" ) Dig
-            div
-            button(name = "function" value = "turtle.digUp()" ) Dig Up
-            div
-            button(name = "function" value = "turtle.digDown()" ) Dig Down
-
-            br
+            button(name="modifier" value = "clear" ) Clear Instructions
+        br
+        div
+            button(name = "action" value = "turtle.turnLeft()" ) Turn Left
+        div
+            button(name = "action" value = "turtle.turnRight()" ) Turn right
+        div
+            button(name = "action" value = "turtle.forward()" ) Forward
+        div
+            button(name = "action" value = "turtle.back()" ) Back 
+        div
+            button(name = "action" value = "turtle.up()" ) Up
+        div
+            button(name = "action" value = "turtle.down()" ) Down
+        div
+            button(name = "action" value = "turtle.dig()" ) Dig
+        div
+            button(name = "action" value = "turtle.digUp()" ) Dig Up
+        div
+            button(name = "action" value = "turtle.digDown()" ) Dig Down
+        br
+        div
+            input(name = "coords" value = '{"start": [], "end":[]}' type='eval')
+            button(type = "submit" name="function" value="quarry") Send Instructions
+        br
+        div
+            input(name = "custom_action" value = "" type='eval')
             button(type = "submit") Send Instructions
-       
+        br
+        
