@@ -36,11 +36,13 @@ block layout-content-actions
             button(name = "action" value = "turtle.digDown()" ) Dig Down
         br
         div
-            input(name = "coords" value = '{"start": [], "end":[]}' type='eval')
+            input(name = "new_group"   value = "" type = eval)
+            input(name = "start_coord" value = "" type = eval)
+            input(name = "end_coord"   value = "" type = eval)
             button(type = "submit" name="function" value="quarry") Send Instructions
         br
         div
-            input(name = "custom_action" value = "" type='eval')
+            input(name = "custom_action" value = "" type ='eval')
             button(type = "submit") Send Instructions
         br
         

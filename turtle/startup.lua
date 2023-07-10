@@ -1,15 +1,10 @@
-os.loadAPI("json")
-local ws = assert(http.websocket("ws://localhost:3292"))
-
-while (true)
-do
-    local message = ws.receive()
-    print(message)
-    local obj = json.decode(message)
-    if obj.type == 'eval' then
-        print(obj['function'])
-        local func = loadstring(obj['function'])
-        print("> Eval " ..func())
+function mysplit (inputstr, sep)
+    if sep == nil then
+            sep = "%s"
     end
-
+    local t={}
+    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+            table.insert(t, str)
+    end
+    return t
 end
